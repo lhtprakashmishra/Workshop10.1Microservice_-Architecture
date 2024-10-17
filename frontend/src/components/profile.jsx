@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"; // Import useHistory
 import EditProfile from "../components/editProfile.jsx"; // Import the EditProfile component
 
 const Profile = () => {
   const [userData, setUserData] = useState(null);
   const [error, setError] = useState(null);
   const [isEditing, setIsEditing] = useState(false); // State to control the edit modal
+  const navigate = useNavigate(); // Initialize useHistory
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -19,12 +21,17 @@ const Profile = () => {
         setUserData(response.data);
       } catch (error) {
         console.error("Error fetching user data:", error);
-        setError("Error fetching user data.");
+        if (error.response && error.response.status === 401) {
+          alert("Your session has expired. Please log in again."); // Notify user
+          navigate("/login"); // Redirect to login page
+        } else {
+          setError("Error fetching user data.");
+        }
       }
     };
 
     fetchUserData();
-  }, []);
+  }, [history]); // Add history as a dependency
 
   const handleEditClick = () => {
     setIsEditing(true); // Open the edit modal

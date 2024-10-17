@@ -3,13 +3,16 @@ import {
   register,
   login,
   editUser,
-} from "../controller/registrationController.js";
+} from "../user-profile/Controller/RegistrationController/registrationController.js";
 import { validationRules, verifyToken } from "../auth/authenticaltion.js";
-import { getProfile } from "../controller/profileController.js";
+import { getProfile } from "../user-profile/Controller/ProfileController/profileController.js";
 
 import multer from "multer";
 import path from "path";
-import { createPost, getUserPosts } from "../controller/postController.js";
+import {
+  createPost,
+  getUserPosts,
+} from "../user-post/Controller/PostController/postController.js";
 
 // Multer setup
 const storage = multer.diskStorage({

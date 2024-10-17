@@ -137,6 +137,18 @@ const RegistrationForm = () => {
             Register
           </button>
         </form>
+        {/* Button to navigate to login page if user is already registered */}
+        <div className="mt-4 text-center">
+          <p className="text-sm text-gray-600">
+            Already registered?{" "}
+            <button
+              onClick={() => navigate("/login")}
+              className="text-blue-600 hover:underline"
+            >
+              Log in here
+            </button>
+          </p>
+        </div>
       </div>
     </div>
   );

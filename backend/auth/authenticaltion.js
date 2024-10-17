@@ -67,6 +67,12 @@ export const verifyToken = (req, res, next) => {
     next();
   } catch (err) {
     console.error(err); // Log the error for debugging
+    if (err.name === "TokenExpiredError") {
+      // Token expired specific error
+      return res
+        .status(401)
+        .json({ message: "Token expired. Please log in again." });
+    }
     res.status(400).json({ message: "Invalid token." });
   }
 };
