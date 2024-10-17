@@ -25,7 +25,7 @@ const EditProfile = ({ userData, onClose }) => {
 
     try {
       const response = await axios.put(
-        "http://localhost:3001/profile",
+        "https://anonymouspostl.onrender.com/profile",
         formData,
         {
           headers: {

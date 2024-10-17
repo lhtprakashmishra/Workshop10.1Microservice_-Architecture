@@ -8,7 +8,9 @@ const PostFeed = () => {
   // Function to fetch all posts from the API
   const fetchPosts = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/posts");
+      const response = await axios.get(
+        "https://anonymouspostl.onrender.com/posts"
+      );
       setPosts(response.data); // Update state with fetched posts
     } catch (error) {
       console.error("Error fetching posts:", error);

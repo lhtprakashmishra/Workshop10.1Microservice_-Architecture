@@ -13,11 +13,14 @@ const Profile = () => {
     const fetchUserData = async () => {
       const token = localStorage.getItem("token");
       try {
-        const response = await axios.get("http://localhost:3001/profile", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(
+          "https://anonymouspostl.onrender.com/profile",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         setUserData(response.data);
       } catch (error) {
         console.error("Error fetching user data:", error);

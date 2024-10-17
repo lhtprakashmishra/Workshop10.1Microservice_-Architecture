@@ -10,7 +10,7 @@ const PostForm = ({ onPostCreated }) => {
 
     try {
       await axios.post(
-        "http://localhost:3001/posts",
+        "https://anonymouspostl.onrender.com/posts",
         { content },
         {
           headers: {

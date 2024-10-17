@@ -10,10 +10,13 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3001/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://anonymouspostl.onrender.com/login",
+        {
+          email,
+          password,
+        }
+      );
 
       // Store the token in localStorage
       localStorage.setItem("token", response.data.token);
