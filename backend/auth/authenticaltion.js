@@ -59,7 +59,6 @@ export const verifyToken = (req, res, next) => {
       .status(401)
       .json({ message: "Access Denied. No token provided." });
   }
-
   try {
     const decoded = jwt.verify(token, jwtSecret);
     req.user = decoded; // Store the decoded user data

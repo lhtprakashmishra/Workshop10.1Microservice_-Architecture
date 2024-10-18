@@ -6,8 +6,8 @@ import EditProfile from "../components/editProfile.jsx"; // Import the EditProfi
 const Profile = () => {
   const [userData, setUserData] = useState(null);
   const [error, setError] = useState(null);
-  const [isEditing, setIsEditing] = useState(false); // State to control the edit modal
-  const navigate = useNavigate(); // Initialize useHistory
+  const [isEditing, setIsEditing] = useState(false); //State to control the edit modal
+  const navigate = useNavigate(); //Initialize useHistory
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -34,7 +34,7 @@ const Profile = () => {
     };
 
     fetchUserData();
-  }, [history]); // Add history as a dependency
+  }, []);
 
   const handleEditClick = () => {
     setIsEditing(true); // Open the edit modal
@@ -56,18 +56,21 @@ const Profile = () => {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-xl font-semibold">My Dashboard</h1>
           <div>
-            <a href="/home" className="text-gray-600 hover:text-blue-500 mx-2">
+            <Link to="/home" className="text-gray-600 hover:text-blue-500 mx-2">
               Home
-            </a>
-            <a href="/posts" className="text-gray-600 hover:text-blue-500 mx-2">
+            </Link>
+            <Link
+              to="/posts"
+              className="text-gray-600 hover:text-blue-500 mx-2"
+            >
               Posts
-            </a>
-            <a
-              href="/photos"
+            </Link>
+            <Link
+              to="/photos"
               className="text-gray-600 hover:text-blue-500 mx-2"
             >
               Photos
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
