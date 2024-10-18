@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // Import useHistory
+import { useNavigate, Link } from "react-router-dom"; // Import useHistory
 import EditProfile from "../components/editProfile.jsx"; // Import the EditProfile component
 
 const Profile = () => {
@@ -59,9 +59,12 @@ const Profile = () => {
             <a href="/home" className="text-gray-600 hover:text-blue-500 mx-2">
               Home
             </a>
-            <a href="/posts" className="text-gray-600 hover:text-blue-500 mx-2">
+            <Link
+              to="/posts"
+              className="text-gray-600 hover:text-blue-500 mx-2"
+            >
               Posts
-            </a>
+            </Link>
             <a
               href="/photos"
               className="text-gray-600 hover:text-blue-500 mx-2"
