@@ -56,21 +56,18 @@ const Profile = () => {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-xl font-semibold">My Dashboard</h1>
           <div>
-            <Link to="/home" className="text-gray-600 hover:text-blue-500 mx-2">
+            <a href="/home" className="text-gray-600 hover:text-blue-500 mx-2">
               Home
-            </Link>
-            <Link
-              to="/posts"
-              className="text-gray-600 hover:text-blue-500 mx-2"
-            >
+            </a>
+            <a href="/posts" className="text-gray-600 hover:text-blue-500 mx-2">
               Posts
-            </Link>
-            <Link
-              to="/photos"
+            </a>
+            <a
+              href="/photos"
               className="text-gray-600 hover:text-blue-500 mx-2"
             >
               Photos
-            </Link>
+            </a>
           </div>
         </div>
       </nav>
